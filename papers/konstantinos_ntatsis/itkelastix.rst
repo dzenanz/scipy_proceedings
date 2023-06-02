@@ -61,8 +61,7 @@ The ``elastix`` codebase is implemented in C++ and serves as an extension to the
 
 The original and still-supported method to utilize ``elastix`` and ``transformix`` are command line executables. This approach offers the advantage of external dependency independence, which ensures ease of deployment. However, one limitation of this executable-based approach is its reliance on file input/output (I/O) operations. To address this limitation and enable more efficient in-memory operations, a C++ API was developed for ``elastix`` and ``transformix``. This API follows the paradigm established by ITK and its processing filters. By adopting this design approach, ``elastix`` and ``transformix`` gained the ability to perform operations directly in memory. This enhancement provides users with greater flexibility and efficiency in their image registration workflows.
 
-To further accommodate the needs of the users in the continuously developing scientific computing ecosystem, wrappings of the C++ code to other languages was developed in the form SimpleElastix :cite:`marstal2016simpleelastix`, which still exists as part of the SimpleITK :cite:`lowekamp2013design` package. Recently, we have started working on a python-specific ``elastix`` wrapping, ``itk-elastix``, a continuously expanding collection of jupyter examples and its integration with other scientific processing libraries or visualization software. We will discuss these aspects in the remainder of this paper.
-
+To further accommodate the needs of the users in the continuously developing scientific computing ecosystem, wrappings of the C++ code to other languages was developed in the form SimpleElastix :cite:`marstal2016simpleelastix`, which still exists as part of the SimpleITK :cite:`lowekamp2013design` package. Recently, we have started working on a python-specific ``elastix`` wrapping, ``itk-elastix``, a continuously expanding collection of jupyter :cite:`jupyter` examples and its integration with other scientific processing libraries or visualization software. We will discuss these aspects in the remainder of this paper.
 
 ``itk-elastix``: python wrapping
 --------------------------------
@@ -143,19 +142,22 @@ The last part of the code above calculates the Dice coefficient between the fixe
    Example of 2D brain registration and transformation of masks :label:`brain-registration-example`
 
 
-Additional features
-+++++++++++++++++++
-In addition to the core registration and transformation functionality demonstrated above, ``itk-elastix`` offers other features as well such as:
+Jupyter Notebook collection
++++++++++++++++++++++++++++
+In addition to the core registration and transformation functionality demonstrated above, ``itk-elastix`` offers other additional features. To help new users who are starting out, and also keep existing users up-to-date with the new feature implementations, we offer an evolving `collection of Jupyter Notebooks`__ as usage examples. Each of the Notebooks covers usually a specific topic, can be run independently, and includes comments and detailed explanations. The Notebooks are also tested automatically by CI with each pull-request or commit, and hence it is ensured that they always reflect the current API and functionality of the codebase. Such Notebooks include, but are not limited to: 
+
+__ https://github.com/InsightSoftwareConsortium/ITKElastix/tree/main/examples
 
 * specifying masks or point sets for the registration
 * transforming point sets and meshes
 * group-wise registration where no image is specified as fixed but an implicit mean image is used instead
 * logging options
 * saving output to disk options
+* reading/writing transform in hd5 format
 * calculation of spatial jacobian
 * calculation of deformation field
-
-We offer an evolving collection of jupyter notebooks so that new users can accustom themselves to these and other features offered by ``itk-elastix``.
+* calculation of the inverse transform
+* visualization of the registration
 
 Interoperability with other packages
 ------------------------------------
