@@ -212,7 +212,9 @@ Interoperability with NumPy and, consequently, with SciPy libraries, comes from 
 
 Project MONAI
 +++++++++++++
-More and more people work on the application of deep learning to medical imaging research. To that end, we developed `itk_monai_bridge` as part of the MONAI codebase that allows conversion 1) of an ITK image to a MONAI MetaTensor and the reverse, and 2) an ITK transform to a MONAI transform and back. In addition, we created tutorials that show the combined use of ``elastix`` and MONAI. The tutorials are the topic of the next section.
+More and more people work on the application of deep learning to medical imaging research. To that end, we developed `itk_torch_bridge`__ as module of the MONAI codebase that allows conversion 1) of an ITK image to a MONAI MetaTensor and the reverse, while making sure that all relevant metadata remain intact, and 2) an ITK transform to a MONAI transform and back. The latter is necessary since the ITK transforms are defined in the world coordinate system while MONAI uses the pixel/voxel space. Example of a relevant application is performing deep learning registration (e.g. affine) using MONAI, and passing the transform as initial transform for ``itk-elastix``, which can further register the images (e.g. non-linearly). Below, there is a short code snippet on how to use the module:
+
+__ https://docs.monai.io/en/latest/data.html#module-monai.data.itk_torch_bridge
 
 .. code-block:: python
 
