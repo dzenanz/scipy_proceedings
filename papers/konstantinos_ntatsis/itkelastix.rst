@@ -61,7 +61,7 @@ The ``elastix`` codebase is implemented in C++ and serves as an extension to the
 
 The original and still-supported method to utilize ``elastix`` and ``transformix`` are command line executables. This approach offers the advantage of external dependency independence, which ensures ease of deployment. However, one limitation of this executable-based approach is its reliance on file input/output (I/O) operations. To address this limitation and enable more efficient in-memory operations, a C++ API was developed for ``elastix`` and ``transformix``. This API follows the paradigm established by ITK and its processing filters. By adopting this design approach, ``elastix`` and ``transformix`` gained the ability to perform operations directly in memory. This enhancement provides users with greater flexibility and efficiency in their image registration workflows.
 
-To further accommodate the needs of the users in the continuously developing scientific computing ecosystem, wrappings of the C++ code to other languages was developed in the form SimpleElastix :cite:`marstal2016simpleelastix`, which still exists as part of the SimpleITK :cite:`lowekamp2013design` package. Recently, we have started working on a Python-specific ``elastix`` wrapping, ``itk-elastix``, a continuously expanding collection of jupyter :cite:`jupyter` examples and its integration with other scientific processing libraries or visualization software. We will discuss these aspects in the remainder of this paper.
+To further accommodate the needs of the users in the continuously developing scientific computing ecosystem, wrappings of the C++ code to other languages was developed in the form of SimpleElastix :cite:`marstal2016simpleelastix`, which still exists as part of the SimpleITK :cite:`lowekamp2013design` package. Recently, we have started working on a Python-specific ``elastix`` wrapping, ``itk-elastix``, a continuously expanding collection of jupyter :cite:`jupyter` examples and its integration with other scientific processing libraries or visualization software. We will discuss these aspects in the remainder of this paper.
 
 ``itk-elastix``: Python wrapping
 --------------------------------
@@ -153,7 +153,7 @@ __ https://github.com/InsightSoftwareConsortium/ITKElastix/tree/main/examples
 * group-wise registration where no image is specified as fixed but an implicit mean image is used instead
 * logging options
 * saving output to disk options
-* reading/writing transform in hd5 format
+* reading/writing transform in hdf5 format
 * calculation of spatial jacobian
 * calculation of deformation field
 * calculation of the inverse transform
@@ -256,7 +256,7 @@ Continuous efforts have been made to make ``itk-elastix`` accessible to users of
 
 Concluding remarks
 ------------------
-We presented ``itk-elastix``, an easy-to-install and easy-to-use Python package that lowers the barrier for multi-dimensional image registration. Its key features are 1) a robust and well-established backend codebase that provides stability and reliability, 2) an extensive collection of tutorials, a parameter file model zoo, and up-to-date documentation as comprehensive resources for user adoption, 3) seamless interoperability with popular scientific libraries in Python, including NumPy, SciPy, and MONAI, and 4) integration into 3D visualization software, facilitating visual analysis and interpretation of registered images. With ``itk-elastix``, researchers and practitioners can effortlessly leverage the strengths of Python and seamlessly integrate it with a wide range of scientific software, which unlocks new possibilities and accelerates advancements in scientific image analysis.
+We presented ``itk-elastix``, an easy-to-install and easy-to-use Python package that lowers the entry barrier for multi-dimensional image registration. Its key features are 1) a robust and well-established backend codebase that provides stability and reliability, 2) an extensive collection of tutorials, a parameter file model zoo, and up-to-date documentation as comprehensive resources for user adoption, 3) seamless interoperability with popular scientific libraries in Python, including NumPy, SciPy, and MONAI, and 4) integration into 3D visualization software, facilitating visual analysis and interpretation of registered images. With ``itk-elastix``, researchers and practitioners can effortlessly leverage the strengths of Python and seamlessly integrate it with a wide range of scientific software, which unlocks new possibilities and accelerates advancements in scientific image analysis.
 
 
 Acknowledgment 
