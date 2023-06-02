@@ -194,11 +194,6 @@ In addition to the fact that ``elastix`` is based on ITK, there is an ongoing ef
    # Get transformed (translated) image
    translated_image = transformix_obj.GetOutput()
 
-.. figure:: images/translated-image.png
-
-   Translate an image by passing an ITK Transform directly to ``transformix`` :label:`translated-image`
-
-
 
 NumPy & SciPy
 +++++++++++++
